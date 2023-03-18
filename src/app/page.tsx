@@ -17,7 +17,7 @@ export default async function Home() {
     <main>
       <div className='grid'>
         {res.map((movie, movieIndex) => (
-          <MoviePoster key={movieIndex} image={movie.image_url} title={movie.name} rating={movie.rating} year={movie.year} />
+          <MoviePoster key={movieIndex} image={movie.image_url} title={movie.name} rating={movie.rating} year={movie.year} movieId={movie.imdb_url.slice(7)} />
         ))}
       </div>
     </main>
