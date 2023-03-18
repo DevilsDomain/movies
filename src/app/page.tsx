@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
-import styles from './page.module.css'
+import '../app/page.css'
 import MoviePoster from '@/components/MoviePoster/MoviePoster'
 
 
@@ -12,12 +12,13 @@ export default async function Home() {
   console.log(res)
   return (
     <main>
-      {res.map((movie, movieIndex) => {
-        return(
-          <MoviePoster key={movieIndex} image={movie.image_url} title={movie.name} rating={movie.rating} year={movie.year}/>
-        );
-      })}
-      <p>{res[0].year}</p>
+      <div className='grid'>
+        {res.map((movie, movieIndex) => {
+          return(
+            <MoviePoster key={movieIndex} image={movie.image_url} title={movie.name} rating={movie.rating} year={movie.year}/>
+          );
+        })}
+      </div>
     </main>
   )
 }
