@@ -14,7 +14,7 @@ function MovieList({ data }) {
   };
 
   return (
-    <div>
+    <div className='container'>
       <input placeholder='Search Movie...' value={searchQuery} onChange={handleSearch} />
       <div className='grid'>
         {filteredData.map((movie, movieIndex) => (
