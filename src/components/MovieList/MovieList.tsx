@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import '../MovieList/movielist.css';
 import MoviePoster from '../MoviePoster/MoviePoster';
 
-function Searcbar({ data }) {
+function MovieList({ data }) {
   const [searchQuery, setSearchQuery] = useState('');
   const filteredData = data.filter((movie) =>
     movie.name.toLowerCase().includes(searchQuery.toLowerCase())
@@ -32,4 +32,4 @@ function Searcbar({ data }) {
   );
 }
 
-export default Searcbar;
+export default MovieList;
