@@ -5,19 +5,29 @@ import '../MoviePoster/MoviePoster.css';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
-function MoviePoster({ image, title, rating, year, movieId }) {
+interface MoviePosterProps {
+    image: string;
+    title: string;
+    rating: number;
+    year: number;
+    movieId: number;
+  }
+  
+
+function MoviePoster({ image, title, rating, year, movieId } :MoviePosterProps) {
   const router = useRouter();
-  const [fave, setFave] = useState(false);
+  const [fave, setFave] = useState<boolean>(false);
 
   const handleFavorite = () => {
     setFave(!fave);
   };
 
+
   return (
     <div className='pos-relative'>
       <div className='text pos-absolute'>
         <p onClick={() => router.push(`/movie/${movieId}`)}>{title}</p>
-        <p>{rating}</p>
+        <p>{rating}⭐️</p>
         <p>{year}</p>
       </div>
       <Image src={image} width={200} height={400} className='image' alt={title}/>
