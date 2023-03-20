@@ -10,7 +10,7 @@ interface MoviePosterProps {
     title: string;
     rating: number;
     year: number;
-    movieId: number;
+    movieId: string;
   }
   
 
