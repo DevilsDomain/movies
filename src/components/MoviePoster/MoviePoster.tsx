@@ -20,11 +20,11 @@ function MoviePoster({ image, title, rating, year, movieId }) {
         <p>{rating}</p>
         <p>{year}</p>
       </div>
-      <Image src={image} width={200} height={400} className='image' />
+      <Image src={image} width={200} height={400} className='image' alt={title}/>
       {fave ? (
-        <div onClick={handleFavorite}><h4>❌</h4></div>
+        <div onClick={handleFavorite}><h4>Remove❌</h4></div>
       ) : (
-        <div onClick={handleFavorite}><h4>✅</h4></div>
+        <div onClick={handleFavorite}><h4>Add✅</h4></div>
       )}
     </div>
   );
